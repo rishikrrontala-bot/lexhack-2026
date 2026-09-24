@@ -44,7 +44,7 @@ export function liftQuotes(sentence: string): Quoted {
               break;
             }
           }
-        } else if (c === closer && (j + 1 >= sentence.length || !/[\p{L}\p{N}]/u.test(sentence[j + 1]!))) {
+        } else if (c === closer && (j + 1 >= sentence.length || !/[\p{L}\p{N}"]/u.test(sentence[j + 1]!)) && j > i + 1) {
           end = j;
           break;
         }
@@ -124,7 +124,7 @@ function cleanSection(s: string): string {
 }
 
 const CODE_CITE = new RegExp(
-  String.raw`D\.\s?C\.\s+Official\s+Code\s+§§?\s*([0-9]+[A-Z]?[-:][0-9A-Za-z.:-]*?[0-9A-Za-z])((?:${DES})*)(\s+et\s+seq\.?)?(?=[\s,;)]|$)`,
+  String.raw`D\.?\s?C\.?\s+(?:Official\s+)?Code\s+§§?\s*([0-9]+[A-Z]?[-:][0-9A-Za-z.:-]*?[0-9A-Za-z])((?:${DES})*)(\s+et\s+seq\.?)?(?=[\s,;)]|$)`,
   'i',
 );
 
@@ -283,8 +283,10 @@ export function parseObject(s: string, quotes: string[], defaultOcc: Occurrence 
 
 /** Split a predicate into clauses at each new verb ("… and by striking …; and by adding …"). */
 export function splitClauses(pred: string): string[] {
+  // Split before each new "by <verb>" clause, and at semicolons that start a new verb.
+  // A bare "and inserting" belongs to its "striking" clause ("striking X and inserting Y in its place").
   return pred
-    .split(/(?:\s*[;,]\s*(?:and\s+)?|\s+and\s+)(?=(?:by\s+)?(?:striking|inserting|adding|redesignating|designating)\b)/i)
+    .split(/(?:\s*[;,]\s*(?:and\s+)?|\s+and\s+)(?=by\s+(?:striking|inserting|adding|redesignating|designating)\b)|\s*;\s*(?:and\s+)?(?=(?:striking|inserting|adding|redesignating)\b)/i)
     .map((c) => c.trim())
     .filter(Boolean);
 }
@@ -329,6 +331,11 @@ export function parseInstruction(sentence: string): ParsedSentence {
     return result;
   }
 
+  const selfRed = /^(?:re)?designate\s+(?:the|this|such)\s+(?:sub-)*(?:sub)?(?:section|paragraph|subparagraph)\s+as\s+(?:(?:sub-)*(?:sub)?(?:section|paragraph|subparagraph)\s+)?(\([A-Za-z0-9-]+\))/i.exec(text);
+  if (selfRed) {
+    result.ops.push({ type: 'redesignate', from: ['@self'], to: [selfRed[1]!] });
+    return result;
+  }
   if (IMPERATIVE.test(text)) {
     result.ops.push(...parsePredicate(text, quotes));
     // "Strike the phrase X in subsection (b) and ..." — targets named inside the imperative

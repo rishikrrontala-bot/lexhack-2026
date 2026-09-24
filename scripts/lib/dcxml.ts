@@ -166,7 +166,7 @@ function renderLaw(root: Element): { text: string; provisions: Element[] } {
       const num = child(e, 'num');
       const heading = child(e, 'heading');
       const text = child(e, 'text');
-      const head = [e.name === 'section' && num ? `§ ${inline(num)}.` : num ? inline(num) : '', heading ? inline(heading) : '', text ? inline(text) : '']
+      const head = [e.name === 'section' && num ? (/[-:]/.test(inline(num)) ? `§ ${inline(num)}.` : `Sec. ${inline(num)}.`) : num ? inline(num) : '', heading ? inline(heading) : '', text ? inline(text) : '']
         .filter(Boolean)
         .join(' ');
       if (head) out.push(head);

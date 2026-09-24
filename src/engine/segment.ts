@@ -10,7 +10,7 @@ import { squash } from './text';
 
 const OPEN_Q = /^[“"]/;
 /** An enumerator such as (a), (1), (A), (iv), (2A), (aa), (b-1). */
-const ENUM = String.raw`\((?:[a-z]{1,4}|[A-Z]{1,4}|\d{1,3}[A-Za-z]{0,2}(?:-\d+)?|[a-z]{1,3}-\d+|[A-Z]-\d+)\)`;
+const ENUM = String.raw`\[?\((?:[a-z]{1,4}|[A-Z]{1,4}|\d{1,3}[A-Za-z]{0,2}(?:-\d+)?|[a-z]{1,3}-\d+|[A-Z]{1,2}-(?:\d+|[ivx]+))\)\]?`;
 const LEAD_ENUMS = new RegExp(String.raw`^((?:${ENUM})+)\s*`);
 const SEC = /^Sec(?:tion)?\.?\s*(\d+[a-z]?)\.\s*/i;
 const PARA_START = new RegExp(String.raw`^(?:[“"]\s*)?(?:${ENUM}|§\s*\d|Sec(?:tion)?\.?\s*\d+[a-z]?\.|BE IT ENACTED|AN ACT\b|TITLE\s+[IVX\d]+)`, 'i');
@@ -95,11 +95,13 @@ function unquote(s: string): { body: string; closed: boolean; after: string } {
 }
 
 function splitNums(body: string): { nums: string[]; text: string } {
-  const sec = /^§\s*([\dA-Z:.-]+)\.\s*/.exec(body);
+  const sec = /^§\s*([\dA-Za-z:.-]+?)\.\s+/.exec(body);
   if (sec) return { nums: [`§ ${sec[1]}`], text: body.slice(sec[0].length) };
+  const act = /^Sec(?:tion)?\.\s*(\d+[a-zA-Z]{0,3}(?:-\d+)?)\.\s*/.exec(body);
+  if (act) return { nums: [`Sec. ${act[1]}`], text: body.slice(act[0].length) };
   const m = LEAD_ENUMS.exec(body);
   if (!m) return { nums: [], text: body };
-  return { nums: m[1]!.match(new RegExp(ENUM, 'g')) ?? [], text: body.slice(m[0].length) };
+  return { nums: (m[1]!.match(new RegExp(ENUM, 'g')) ?? []).map((d) => d.replace(/[\[\]]/g, '')), text: body.slice(m[0].length) };
 }
 
 /** Does this provision introduce quoted material (new text) rather than child provisions? */
