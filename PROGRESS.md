@@ -9,6 +9,7 @@
 |---|---|---|
 | Wed Sep 23 · 10:32 PM (Phase 0) | 90.5 | 66.5 |
 | Wed Sep 23 · 10:54 PM (Phase 5 start, save point) | 90.1 | 66.1 |
+| Wed Sep 23 · 11:03 PM (stopped at Rishik's request) | 89.95 | 65.95 |
 
 ## Phase plan (budgeted backwards, hackathon-win Phase 4 table, over the 66.5 h to the internal target)
 | # | Phase | Budget | Target finish (ET) | Status |
@@ -58,3 +59,20 @@ Next steps, in order:
 1. `src/engine/*`: text utils, segmenter (bill text → provisions + quoted blocks), citation/path parser, grammar (sentence → ops), compile (context stack), code model, apply (marked-segment tree with op provenance), lint, word diff. Vitest for each.
 2. `scripts/lib/dcxml.ts` (law XML → bill-like text + gold ops; code XML → CodeNode JSON), `scripts/benchmark.ts` (parse agreement vs gold + replay vs codified snapshots → `public/data/benchmark.json` + `research/BENCHMARK.md`), `scripts/build-data.ts` (examples + per-title code JSON).
 3. UI (Preact) per DESIGN.md + surface brief. Then CI workflow + post-deploy Playwright smoke on GitHub runners.
+
+## STOPPED Wed Sep 23, ~11:03 PM ET (Rishik asked to push everything and stop at 11:06 PM)
+**Built so far (all pushed):**
+- Engine in `src/engine/`: `types.ts`, `text.ts` (quote/whitespace-tolerant matching), `code.ts` (Code tree, path lookup, official URLs), `segment.ts` (bill text → provisions + quoted blocks; strips PDF line numbers), `grammar.ts` (instruction sentence → targets + ops), `compile.ts` (context stack → Instructions).
+- `scripts/lib/dcxml.ts`: law XML → bill-like text + gold ops; Code section XML → CodeNode JSON. `scripts/lib/signature.ts`: comparable signatures for gold vs engine.
+- `scripts/spike/parsebench.ts` (run: `npx tsx scripts/spike/parsebench.ts 23,24,25,26`) scores parse agreement vs the codifiers' gold. `scripts/spike/dbg.ts <period> <n>` prints a law's provisions and compiled instructions.
+
+**Current parse agreement (413 permanent laws, P23–26):** recall 30.4%, precision 68.3% (find-replace 35% / 79%, replace 44% / 89%, repeal 30% / 94%, insert 19% / 42%). This is **work in progress, not a result**, so don't quote it anywhere.
+
+**Biggest miss buckets** (snapshot in `research/.parse-misses-snapshot.txt`), which are the next fixes:
+1. "A new paragraph/subsection (x) is added to read as follows:" (~700 misses). The gold key is `IN|<container>|<num>`. Check that the container resolves to the parent context (not the act-level section) and that `num` matches.
+2. "Paragraph/Subsection (x) is amended by striking the phrase … and inserting …" (~300). Most likely the context is not reaching the right section: check `compose()` in `compile.ts` against `dbg.ts` output.
+3. "A new Chapter N / Title IV is added" (~160). These are chapter-level inserts. Map them to `add-sections` or exclude them from scoring with a stated reason.
+4. "The lead-in language is amended …" (58). The gold part is likely `text` on the container. Align the signature.
+5. "…striking the tabulation…" (40): tables, so exclude with a stated reason.
+
+**Then, per the plan:** `apply.ts` (marked-segment tree with op provenance), `lint.ts`, word diff, Vitest tests, `scripts/benchmark.ts` (parse + replay against codified snapshots), `scripts/build-data.ts`, Preact UI per DESIGN.md and the surface brief, CI + post-deploy smoke on GitHub runners, docs, video, submission kit, HANDOFF.md.
