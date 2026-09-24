@@ -5,6 +5,13 @@
 
 *Facts read from the live Devpost page on 2026-09-23. ⚠ = unconfirmed, so verify before relying on it.*
 
+**Re-verification, Wed Sep 23 2026, ~10:40 PM ET (cloud session).** The session's egress policy blocks `*.devpost.com`, so the event page and `/rules` could not be loaded directly. Cross-checked through the search index instead (queries and results logged in `research/RESEARCH-BRIEF.md`):
+- ✅ Deadline **Sep 27, 2026 at 5:00 PM EDT**: confirmed.
+- ✅ Required: demo video **2–3 minutes** or visual walkthrough, plus a tech-stack list ("technologies, APIs, LLMs, or low-code platforms used"): confirmed.
+- ✅ The theme and the **Real-World Impact & Feasibility** criterion wording: confirmed. Official theme examples: legal guidance / plain-language translation / public assistance platforms; AI safety / bias detection / governance auditors; automated contract parsers / legal workflow agents. Formats: "web apps, mobile apps, low-code prototypes, browser extensions, or custom algorithms".
+- ✅ Perks: .xyz domain (350), Adaption Labs premium, DevSwarm Pro, YouCam API units. Referral prizes $500 / $300 / $200: confirmed.
+- ⚠ Not re-confirmable from the index: the exact cash amounts for 1st–3rd, the other four criterion weights (kept as recorded on 2026-09-23), and the **18+ / age-of-majority** eligibility rule. **Rishik must still confirm eligibility himself before submitting.**
+
 ## ⚠ Flags for Rishik
 - **Eligibility:** 18+ / age of majority. Rishik must confirm he qualifies before submitting. HANDOFF.md must say so at the top.
 
