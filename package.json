@@ -15,7 +15,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "e2e": "playwright test",
-    "data": "tsx scripts/build-data.ts",
+    "data": "node --import tsx scripts/build-data.ts",
     "bench": "tsx scripts/benchmark.ts"
   },
   "dependencies": {

@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<section xmlns="https://code.dccouncil.us/schemas/dc-library" xmlns:codified="https://code.dccouncil.us/schemas/codified" xmlns:codify="https://code.dccouncil.us/schemas/codify" xmlns:xi="http://www.w3.org/2001/XInclude" containing-doc="D.C. Code">
+  <num>38-501</num>
+  <text>
+      *NOTE: This section includes amendments by temporary legislation that will expire on July 10, 2024. To view the text of this section after the expiration of all emergency and temporary legislation, click this link: <cite path="§38-501(Perm)">Permanent Version</cite>.*
+      </text>
+  <heading>Definitions.</heading>
+  <text>For the purpose of this chapter:</text>
+  <para>
+    <num>(1)</num>
+    <text>The term "admit" means a student's official enrollment in a school, child development facility, or college or university.</text>
+  </para>
+  <para>
+    <num>(2)</num>
+    <text>The term “certification of immunization” means  certification by a healthcare professional authorized to administer a vaccine, his or her representative, or the public health authorities of the immunizations that a student has received or from which the student has a medical or religious exemption.</text>
+  </para>
+  <para placeholder="Repealed">
+    <num>(2A)</num>
+    <text>Repealed.</text>
+  </para>
+  <para>
+    <num>(3)</num>
+    <text>The term "student" means a person who is admitted to or seeks admission to a school, child development facility, or college or university, or for whom admission is sought by a parent or guardian, and who will not attain the age of 26 years before the start of the term for which admission is sought.</text>
+  </para>
+  <para>
+    <num>(4)</num>
+    <text>The term "immunization" means the receipt of the initial vaccination and any boosters or revaccinations required to maintain immunity against a communicable disease.</text>
+  </para>
+  <para>
+    <num>(5)</num>
+    <text>The term “Mayor” means the Mayor of the District of Columbia.</text>
+  </para>
+  <para>
+    <num>(6)</num>
+    <text>The term “public health authorities” means the official or officials of the executive branch of the government of the District of Columbia designated by the Mayor pursuant to this chapter.</text>
+  </para>
+  <para>
+    <num>(7)</num>
+    <text>The term “responsible person” means, in the case of a student under 18 years of age, a parent or guardian of the student, but in the case of a student 18 years of age or older, the student .</text>
+  </para>
+  <para>
+    <num>(8)</num>
+    <text>The term “school” means:</text>
+    <para>
+      <num>(A)</num>
+      <text>A District of Columbia Public Schools school or a public charter school serving any grades pre-K through 12; and</text>
+    </para>
+    <para>
+      <num>(B)</num>
+      <text>A private, parochial, or independent school that offers instruction at any level or grade from pre-K through 12;</text>
+    </para>
+    <para placeholder="Repealed">
+      <num>(C)</num>
+      <text>Repealed.</text>
+    </para>
+    <para placeholder="Repealed">
+      <num>(D)</num>
+      <text>Repealed.</text>
+    </para>
+  </para>
+  <para>
+    <num>(9)</num>
+    <text>The term "child development facility" means a licensed center, home, expanded home, or other structure that provides care and other services, supervision and guidance for children, infants, and toddlers on a regular basis, regardless of its designated name. The term "Child development facility" does not include a school engaged in legally required educational and related functions or a pre-K education program licensed pursuant to <cite path="38|2A|I">subchapter I of Chapter 2A of this title</cite>.</text>
+  </para>
+  <para>
+    <num>(10)</num>
+    <text>The term "college or university" means any post-secondary educational institution authorized, created, or incorporated by special act of the Congress of the United States or the Council or required to be licensed by the District of Columbia pursuant to <cite path="38|13">Chapter 13 of this title</cite>.</text>
+  </para>
+  <para>
+    <num>(11)</num>
+    <text>The term "exclusion standards" means standards for barring students who do not comply with the immunization requirements of <cite path="38|5">this chapter</cite> and the rules issued pursuant to <cite path="38|5">this chapter</cite> from attending schools and child development facilities.</text>
+  </para>
+  <para>
+    <num>(12)</num>
+    <text>The term "LEA" means local education agency, which is the District of Columbia Public Schools system or any individual public charter school or group of public charter schools operating under a single charter.</text>
+  </para>
+  <para>
+    <num>(13)</num>
+    <text>The term "list of immunizations" means the list of immunizations, established by the Mayor pursuant to <cite path="§38-503">§ 38-503</cite>, required to be included on a certification of immunization.</text>
+  </para>
+  <annotations>
+    <annotation doc="D.C. Law 3-20" type="History" path="§2">Sept. 28, 1979, D.C. Law 3-20, § 2, 26 DCR 380</annotation>
+    <annotation type="Delegation of Authority">Delegation of Authority to the Director of the Department of Health Immunization of School Students Act of 1979, see Mayor’s Order 2009-149, September 3, 2009 ( 56 DCR 7520).</annotation>
+    <annotation type="Prior Codifications">1973 Ed., § 31-2201.</annotation>
+    <annotation type="Prior Codifications">1981 Ed., § 31-501.</annotation>
+    <annotation history="false" type="Emergency Legislation" doc="D.C. Act 24-280" path="§2|(a)" codified:display="Note" app="2022-01-12" eff="2022-01-12">For temporary (90 days) amendment of this section, see <cite doc="D.C. Act 24-280" path="§2|(a)">§ 2(a) of Coronavirus Immunization of School Students and Early Childhood Workers Regulation Emergency Amendment Act of 2021 (D.C. Act 24-280, Jan. 12, 2022, 69 DCR 000425)</cite>.</annotation>
+    <annotation app="2022-01-12" doc="D.C. Act 24-280" eff="2022-01-12" path="§2|(a)" type="History" display="false"/>
+    <annotation app="2022-03-02" doc="D.C. Law 24-85" eff="2022-03-02" path="§2|(a)|(1)" type="History"/>
+    <annotation app="2022-03-02" doc="D.C. Law 24-85" eff="2022-03-02" path="§2|(a)|(2)" type="History"/>
+    <annotation app="2022-03-02" doc="D.C. Law 24-85" eff="2022-03-02" path="§2|(a)|(3)" type="History"/>
+    <annotation history="false" type="Emergency Legislation" doc="D.C. Act 25-200" path="§2|(a)" codified:display="Note" app="2023-07-31" eff="2023-07-31">For temporary (90 days) amendment of this section, see <cite doc="D.C. Act 25-200" path="§2|(a)">§ 2(a) of School Student Vaccination Emergency Amendment Act of 2023 (D.C. Act 25-200, July 31, 2023, 70 DCR 10752)</cite>.</annotation>
+    <annotation app="2023-07-31" doc="D.C. Act 25-200" eff="2023-07-31" path="§2|(a)" type="History" display="false"/>
+    <annotation history="false" type="Emergency Legislation" doc="D.C. Act 25-258" path="§2|(a)" codified:display="Note" app="2023-10-25" eff="2023-10-25">For temporary (90 days) amendment of this section, see <cite doc="D.C. Act 25-258" path="§2|(a)">§ 2(a) of School Student Vaccination Congressional Review Emergency Amendment Act of 2023 (D.C. Act 25-258, Oct. 25, 2023, 70 DCR 14430)</cite>.</annotation>
+    <annotation app="2023-10-25" doc="D.C. Act 25-258" eff="2023-10-25" path="§2|(a)" type="History" display="false"/>
+    <annotation app="2023-11-28" doc="D.C. Law 25-77" eff="2023-11-28" path="§2|(a)" type="History" display="false"/>
+    <annotation app="2023-11-28" doc="D.C. Law 25-77" eff="2023-11-28" path="§2|(a)" type="History"/>
+    <annotation history="false" type="Temporary Legislation" doc="D.C. Law 25-77" path="§2|(a)" codified:display="Note" app="2023-11-28" eff="2023-11-28">For temporary (225 days) amendment of this section, see <cite doc="D.C. Law 25-77" path="§2|(a)">§ 2(a) of School Student Vaccination Temporary Amendment Act of 2023 (D.C. Law 25-77, Nov. 28, 2023, 70 DCR 13748)</cite>.</annotation>
+    <annotation app="2024-01-23" doc="D.C. Law 25-108" eff="2024-01-23" path="§2|(a)|(1)" type="History"/>
+    <annotation app="2024-01-23" doc="D.C. Law 25-108" eff="2024-01-23" path="§2|(a)|(2)|(A)" type="History"/>
+    <annotation app="2024-01-23" doc="D.C. Law 25-108" eff="2024-01-23" path="§2|(a)|(2)|(B)" type="History"/>
+    <annotation app="2024-01-23" doc="D.C. Law 25-108" eff="2024-01-23" path="§2|(a)|(3)" type="History"/>
+    <annotation app="2024-01-23" doc="D.C. Law 25-108" eff="2024-01-23" path="§2|(a)|(4)" type="History"/>
+    <annotation app="2024-01-23" doc="D.C. Law 25-108" eff="2024-01-23" path="§2|(a)|(5)" type="History"/>
+    <annotation app="2024-01-23" doc="D.C. Law 25-108" eff="2024-01-23" path="§2|(a)|(6)" type="History"/>
+    <annotation app="2024-01-23" doc="D.C. Law 25-108" eff="2024-01-23" path="§2|(a)|(7)|(A)" type="History"/>
+    <annotation app="2024-01-23" doc="D.C. Law 25-108" eff="2024-01-23" path="§2|(a)|(7)|(B)" type="History"/>
+    <annotation app="2024-01-23" doc="D.C. Law 25-108" eff="2024-01-23" path="§2|(a)|(7)|(C)" type="History"/>
+    <annotation app="2024-01-23" doc="D.C. Law 25-108" eff="2024-01-23" path="§2|(a)|(7)|(D)" type="History"/>
+    <annotation app="2024-01-23" doc="D.C. Law 25-108" eff="2024-01-23" path="§2|(a)|(8)" type="History"/>
+  </annotations>
+</section>
