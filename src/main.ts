@@ -49,8 +49,9 @@ function run() {
   const scoped = compiled.instructions.filter(i=>i.target.section==='38-501');
   const result = applyInstructions(example.section.before as CodeSection, scoped);
   edits = result.edits;
-  const unresolved = compiled.diagnostics.length + result.diagnostics.length + compiled.instructions.length - scoped.length;
-  text('#parse-summary', `${scoped.length} instructions target § 38-501 · ${edits.length} applied · ${unresolved} queries or out-of-scope instructions`);
+  const queries = compiled.diagnostics.length + result.diagnostics.length;
+  const otherSections = compiled.instructions.length - scoped.length;
+  text('#parse-summary', `${scoped.length} instructions target § 38-501 · ${edits.length} applied · ${queries} queries · ${otherSections} instructions for other sections`);
   const list = $('#instructions'); list.replaceChildren();
   for (const [i, edit] of edits.entries()) {
     const button = document.createElement('button'); button.type='button'; button.className='instruction'; button.setAttribute('aria-pressed','false');
