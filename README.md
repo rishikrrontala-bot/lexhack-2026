@@ -2,6 +2,8 @@
 
 **[Open the live proof desk](https://rishikrrontala-bot.github.io/lexhack-2026/)** · Built by **Rishik Rontala** for [LexHack 2026](https://lexhack-2026.devpost.com/)
 
+**[Watch the 2½-minute captioned demo](submission/video/demo.mp4)** · [View the screenshot gallery](submission/gallery/)
+
 > Paste a D.C. bill. Read the law it would make, with each edit traced to the instruction that caused it.
 
 Bills often describe edits to an existing statute rather than show the resulting statute. In Its Place makes that intermediate step visible. The live prototype loads the Council's **Immunization of School Students Amendment Act of 2023** (D.C. Law 25-108), applies its twelve parsed instructions aimed at **D.C. Code § 38-501** to the Council's 2023-12-11 Code snapshot, and shows each change alongside its source sentence. The 2024-02-08 published section is retained as a comparison. The law text is editable, but replay is deliberately scoped to this one Code section.

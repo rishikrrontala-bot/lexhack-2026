@@ -1,0 +1,26 @@
+"""Capture five unretouched 1500x1000 screenshots of the public demo."""
+from pathlib import Path
+from playwright.sync_api import sync_playwright
+out=Path(__file__).resolve().parent/'gallery';out.mkdir(exist_ok=True)
+with sync_playwright() as p:
+ b=p.chromium.launch(executable_path='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless=True,args=['--no-sandbox','--mute-audio'])
+ page=b.new_page(viewport={'width':1500,'height':1000},device_scale_factor=1,reduced_motion='reduce')
+ page.goto('https://rishikrrontala-bot.github.io/lexhack-2026/',wait_until='networkidle')
+ page.screenshot(path=str(out/'01-hero.png'))
+ page.locator('#compile').click()
+ page.locator('#after-text ins').wait_for()
+ page.locator('#desk').scroll_into_view_if_needed()
+ page.screenshot(path=str(out/'02-proof-desk.png'))
+ page.locator('#after-block').scroll_into_view_if_needed()
+ page.screenshot(path=str(out/'03-traced-change.png'))
+ page.locator('.instruction').nth(3).click()
+ page.locator('#after-block').scroll_into_view_if_needed()
+ page.screenshot(path=str(out/'04-repeal.png'))
+ original=page.locator('#bill-text').input_value()
+ page.locator('#bill-text').fill(original.replace('Strike the word "written".','Strike the word "nonexistent wording".'))
+ page.locator('#compile').click()
+ page.locator('.query').first.wait_for()
+ page.locator('.query').first.scroll_into_view_if_needed()
+ page.screenshot(path=str(out/'05-refusal-query.png'))
+ b.close()
+print('Gallery ready:',out)

@@ -21,3 +21,4 @@ __pycache__/
 .impeccable/mocks/
 .impeccable/config.local.json
 /data-cache/
+submission/video/*.webm
