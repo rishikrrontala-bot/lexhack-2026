@@ -27,6 +27,7 @@ function lineDiff(before: string, after: string, target: HTMLElement) {
   const newMiddle = after.slice(start, after.length - end || undefined);
   target.append(document.createTextNode(before.slice(0,start)));
   if (oldMiddle) { const del = document.createElement('del'); del.textContent = oldMiddle; target.append(del); }
+  if (oldMiddle && newMiddle) { const divider = document.createElement('span'); divider.className = 'change-divider'; divider.textContent = ' → '; divider.setAttribute('aria-label', 'changes to'); target.append(divider); }
   if (newMiddle) { const ins = document.createElement('ins'); ins.textContent = newMiddle; target.append(ins); }
   target.append(document.createTextNode(after.slice(after.length - end)));
 }
