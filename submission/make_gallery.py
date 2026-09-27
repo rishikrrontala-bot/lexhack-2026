@@ -11,6 +11,7 @@ with sync_playwright() as p:
  page.locator('#after-text ins').wait_for()
  page.locator('#desk').scroll_into_view_if_needed()
  page.screenshot(path=str(out/'02-proof-desk.png'))
+ page.locator('.instruction').nth(0).click()
  page.locator('#after-block').scroll_into_view_if_needed()
  page.screenshot(path=str(out/'03-traced-change.png'))
  page.locator('.instruction').nth(3).click()
